@@ -7,14 +7,16 @@ public class ZombieController : MonoBehaviour {
 	public GameObject[] Players;
 	private GameObject CurrentPlayer;
 	public float InitialSpeed = 1.0f;
+	public enum Direction {Up,Down,Left,Right}
+	public Direction direction = Direction.Down;
 	void Start () {
-		Invoke ("WaitStart",0.2f);
-	}
-
-	void WaitStart(){
 		if (Players != null) {
 			CurrentPlayer = Players[0];	
 		}
+		Invoke ("WaitStart",1.0f);
+	}
+
+	void WaitStart(){
 		StartCoroutine(UpdateAction());
 	}
 
@@ -39,6 +41,9 @@ public class ZombieController : MonoBehaviour {
 	}
 
 	private int FindThePlayer(GameObject player){
+		if (player == null) {
+			player = CurrentPlayer;	
+		}
 		float zombie_x = transform.localPosition.x;
 		float zombie_y = transform.localPosition.y;
 		float player_x = player.transform.localPosition.x;
@@ -66,18 +71,22 @@ public class ZombieController : MonoBehaviour {
 
 	private void Up(){
 		this.transform.Translate (Vector2.up * Time.deltaTime * InitialSpeed);
+		direction = Direction.Up;
 	}
 	
 	private void Down(){
 		this.transform.Translate (Vector2.up * Time.deltaTime * InitialSpeed * (-1));
+		direction = Direction.Down;
 	}
 	
 	private void Left(){
 		this.transform.Translate (Vector2.right * Time.deltaTime * InitialSpeed * (-1));
+		direction = Direction.Left;
 	}
 	
 	private void Right(){
 		this.transform.Translate (Vector2.right * Time.deltaTime * InitialSpeed);
+		direction = Direction.Right;
 	}
 
 }
