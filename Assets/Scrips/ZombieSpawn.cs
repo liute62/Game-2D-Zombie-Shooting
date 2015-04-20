@@ -5,7 +5,7 @@ public class ZombieSpawn : MonoBehaviour {
 
 	public GameObject[] Zombies;
 	public int SpawnTimeIntervel;
-	public int MaxSpawnNumber;
+	public int MaxSpawnNumber = 100;
 	public bool EnableSpawn = true;
 	private float initialTime;
 	private int spawnTimeNum;
@@ -23,7 +23,10 @@ public class ZombieSpawn : MonoBehaviour {
 				spawnTimeNum--;
 			}
 		}if (spawnTimeNum == 0) {
-			CreateAZombie();
+			if(MaxSpawnNumber > 0){
+				CreateAZombie();
+				MaxSpawnNumber--;
+			}
 			spawnTimeNum = SpawnTimeIntervel;
 		}
 	}
