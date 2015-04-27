@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	public State state = State.Move;
 	public GameObject GunEffect;
 	public static PlayerController instance;
+	public static string lastPressed;
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -50,18 +51,22 @@ public class PlayerController : MonoBehaviour {
 		}
 	
 			if(Input.GetKey(KeyCode.A)){
+				lastPressed = "a";
 				state = State.Move;
 				Left();
 				activeInput = false;
 			}else if(Input.GetKey(KeyCode.D)){
+				lastPressed = "d";
 				state = State.Move;
 				Right();
 				activeInput = false;
 			}else if(Input.GetKey(KeyCode.W)){
+				lastPressed = "w";
 				state = State.Move;
 				Up();
 				activeInput = false;
 			}else if(Input.GetKey(KeyCode.S)){
+				lastPressed = "s";
 				state = State.Move;
 				Down();
 				activeInput = false;
