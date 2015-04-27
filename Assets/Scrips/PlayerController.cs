@@ -13,9 +13,13 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 moveDirection;
 	public enum Direction {Up,Down,Left,Right}
 	public Direction direction = Direction.Down;
+	public enum State{Move,Shoot}
+	public State state = State.Move;
 	public GameObject GunEffect;
+	public static PlayerController instance;
 	// Use this for initialization
 	void Start () {
+		instance = this;
 		moveDirection = Vector3.right;
 		Invoke ("WaitStart",0.2f);
 	}
@@ -46,15 +50,19 @@ public class PlayerController : MonoBehaviour {
 		}
 	
 			if(Input.GetKey(KeyCode.A)){
+				state = State.Move;
 				Left();
 				activeInput = false;
 			}else if(Input.GetKey(KeyCode.D)){
+				state = State.Move;
 				Right();
 				activeInput = false;
 			}else if(Input.GetKey(KeyCode.W)){
+				state = State.Move;
 				Up();
 				activeInput = false;
 			}else if(Input.GetKey(KeyCode.S)){
+				state = State.Move;
 				Down();
 				activeInput = false;
 			}
@@ -108,7 +116,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Shot(){
-		initEffect (GunEffect);
+		//initEffect (GunEffect);
+		state = State.Shoot;
 	}
 
 	private GameObject initEffect(GameObject prefab){

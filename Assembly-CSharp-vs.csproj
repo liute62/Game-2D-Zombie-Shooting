@@ -46,12 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scrips\Bullet.cs" />
      <Compile Include="Assets\Scrips\CameStatistics.cs" />
      <Compile Include="Assets\Scrips\CameraFollow.cs" />
      <Compile Include="Assets\Scrips\GameAttribute.cs" />
      <Compile Include="Assets\Scrips\GameController.cs" />
      <Compile Include="Assets\Scrips\PlayerAnimator.cs" />
      <Compile Include="Assets\Scrips\PlayerController.cs" />
+     <Compile Include="Assets\Scrips\PlayerShooting.cs" />
      <Compile Include="Assets\Scrips\ZombieAnimator.cs" />
      <Compile Include="Assets\Scrips\ZombieController.cs" />
      <Compile Include="Assets\Scrips\ZombieManager.cs" />
