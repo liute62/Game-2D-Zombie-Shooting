@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameController : MonoBehaviour {
+public class Zombie : MonoBehaviour {
 
+	public string name;
+	public float height;
+	public float width;
 	// Use this for initialization
 	void Start () {
 	

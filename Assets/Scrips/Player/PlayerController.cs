@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
 	public bool mouseInputEnable = true;
 	public float InitialSpeed = 1.0f;
 	public float TurnSpeed = 1.0f;
-	private GameController gameController;
 	private GameAttribute gameAttribute;
 	private Vector3 moveDirection;
 	public enum Direction {Up,Down,Left,Right}
@@ -18,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject GunEffect;
 	public static PlayerController instance;
 	public static string lastPressed;
+	public GameObject BulletPrefab;
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -122,7 +122,14 @@ public class PlayerController : MonoBehaviour {
 
 	private void Shot(){
 		//initEffect (GunEffect);
-		state = State.Shoot;
+		initPrefab(BulletPrefab,new Vector3(0,-0.05f,0));
+	}
+
+	private GameObject initPrefab(GameObject prefab,Vector3 pos){
+		GameObject go = (GameObject)Instantiate (prefab, transform.position, Quaternion.identity);
+		go.transform.parent = transform;
+		go.transform.localPosition = new Vector3 (pos.x,pos.y,pos.z);	
+		return go;
 	}
 
 	private GameObject initEffect(GameObject prefab){
