@@ -1,15 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scrips/Bullet.cs">
-    <Files>
-      <File FileName="Assets/Scrips/ShootGun.cs" Line="70" Column="16" />
-      <File FileName="Assets/Scrips/Bullet.cs" Line="59" Column="103" />
-      <File FileName="Assets/Scrips/Game/GameMaster.cs" Line="24" Column="22" />
-      <File FileName="Assets/Scrips/Zombie/ZombieSpawn.cs" Line="36" Column="1" />
-      <File FileName="Assets/Scrips/Zombie/ZombieController.cs" Line="14" Column="30" />
-      <File FileName="Assets/Scrips/Zombie/Zombie.cs" Line="7" Column="21" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
