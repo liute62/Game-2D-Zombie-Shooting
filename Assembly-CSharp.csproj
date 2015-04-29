@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scrips\Bullet.cs" />
      <Compile Include="Assets\Scrips\CameStatistics.cs" />
      <Compile Include="Assets\Scrips\CameraFollow.cs" />
+     <Compile Include="Assets\Scrips\ChangeLevel.cs" />
+     <Compile Include="Assets\Scrips\Fading.cs" />
      <Compile Include="Assets\Scrips\GameAttribute.cs" />
      <Compile Include="Assets\Scrips\GameController.cs" />
      <Compile Include="Assets\Scrips\GameMaster.cs" />
