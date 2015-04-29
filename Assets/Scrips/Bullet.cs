@@ -29,12 +29,17 @@ public class Bullet : MonoBehaviour {
 	private void move(){
 		moveNum++;
 		if (direction == PlayerController.Direction.Down) {
-			transform.Translate(-Vector2.up * Time.deltaTime * BulletSpeed);
+			transform.eulerAngles = new Vector3(0,0,90);
+			transform.Translate(-Vector2.right * Time.deltaTime * BulletSpeed);
 		}if (direction == PlayerController.Direction.Up) {
-			transform.Translate(Vector2.up  * Time.deltaTime* BulletSpeed);
+			transform.eulerAngles = new Vector3(0,0,90);
+			transform.Translate(Vector2.right  * Time.deltaTime* BulletSpeed);
+
 		}if (direction == PlayerController.Direction.Left) {
+			transform.eulerAngles = new Vector3(0,0,0);
 			transform.Translate(-Vector2.right * Time.deltaTime * BulletSpeed);
 		}if (direction == PlayerController.Direction.Right) {
+			transform.eulerAngles = new Vector3(0,0,0);
 			transform.Translate(Vector2.right* Time.deltaTime * BulletSpeed);
 		}
 	}
