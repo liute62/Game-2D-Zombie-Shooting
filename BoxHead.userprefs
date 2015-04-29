@@ -1,17 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\Bullet.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\ChangeLevel.cs">
     <Files>
-      <File FileName="Assets\Scrips\Bullet.cs" Line="10" Column="32" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\GameMaster.cs">
-    <Files>
-      <File FileName="Assets\Scrips\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\ShootGun.cs" Line="1" Column="1" />
       <File FileName="Assets\Scrips\GameMaster.cs" Line="11" Column="1" />
->>>>>>> origin/master
+      <File FileName="Assets\Scrips\Fading.cs" Line="29" Column="16" />
+      <File FileName="Assets\Scrips\ChangeLevel.cs" Line="8" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

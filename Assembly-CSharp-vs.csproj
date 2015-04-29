@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scrips\Game\CameStatistics.cs" />
      <Compile Include="Assets\Scrips\Game\CameraFollow.cs" />
      <Compile Include="Assets\Scrips\Game\GameAttribute.cs" />
@@ -62,6 +63,25 @@
      <Compile Include="Assets\Scrips\Zombie\ZombieAnimator.cs" />
      <Compile Include="Assets\Scrips\Zombie\ZombieController.cs" />
      <Compile Include="Assets\Scrips\Zombie\ZombieSpawn.cs" />
+=======
+     <Compile Include="Assets\Scrips\Bullet.cs" />
+     <Compile Include="Assets\Scrips\CameStatistics.cs" />
+     <Compile Include="Assets\Scrips\CameraFollow.cs" />
+     <Compile Include="Assets\Scrips\ChangeLevel.cs" />
+     <Compile Include="Assets\Scrips\Fading.cs" />
+     <Compile Include="Assets\Scrips\GameAttribute.cs" />
+     <Compile Include="Assets\Scrips\GameController.cs" />
+     <Compile Include="Assets\Scrips\GameMaster.cs" />
+     <Compile Include="Assets\Scrips\PlayerAnimator.cs" />
+     <Compile Include="Assets\Scrips\PlayerController.cs" />
+     <Compile Include="Assets\Scrips\PlayerShooting.cs" />
+     <Compile Include="Assets\Scrips\ShootGun.cs" />
+     <Compile Include="Assets\Scrips\Zombie1Health.cs" />
+     <Compile Include="Assets\Scrips\ZombieAnimator.cs" />
+     <Compile Include="Assets\Scrips\ZombieController.cs" />
+     <Compile Include="Assets\Scrips\ZombieManager.cs" />
+     <Compile Include="Assets\Scrips\ZombieSpawn.cs" />
+>>>>>>> master
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
