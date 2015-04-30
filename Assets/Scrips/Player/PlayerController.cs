@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void initial(){
-		gameAttribute = GameAttribute.Instance ();
+		gameAttribute = GameAttribute.instance;
 	}
 
 	IEnumerator UpdateAction(){
