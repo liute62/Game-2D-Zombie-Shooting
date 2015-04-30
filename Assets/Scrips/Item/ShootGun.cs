@@ -6,12 +6,12 @@ public class ShootGun : MonoBehaviour {
 	public float fireRate = 0;
 	public int Damage = 150;
 	public LayerMask whatToHit;
-
+	public GameObject Bullet;
 	float timeToFire = 0;
 	Transform bulletSpawn;
 	Transform bulletDirection;
 	RaycastHit2D hit;
-
+	Zombie1Health enemy;
 	// Use this for initialization
 	void Start () {
 		bulletSpawn = transform.FindChild ("BulletSpawn");
@@ -41,7 +41,6 @@ public class ShootGun : MonoBehaviour {
 
 
 	void Shoot () {
-		Debug.Log ("Test");
 		Vector2 BulletSpawnPosition = new Vector2 (bulletSpawn.position.x, bulletSpawn.position.y);
 		if (PlayerController.lastPressed == "a"){
 			hit = Physics2D.Raycast (BulletSpawnPosition, new Vector2 (-1, 0), 100, whatToHit);
@@ -57,11 +56,19 @@ public class ShootGun : MonoBehaviour {
 		}
 		if (hit.collider != null) {
 			Debug.Log ("hit something");
-			Zombie1Health enemy = hit.collider.GetComponent<Zombie1Health>();
+			enemy = hit.collider.GetComponent<Zombie1Health>();
 			if (enemy != null){
-				enemy.DamageEnemy (Damage);
 				Debug.Log ("hit zombie1");
+				StartCoroutine("WaitForBulletTouchZombie");
 			}
 		}
+	}
+
+	private IEnumerator WaitForBulletTouchZombie(){
+		do{
+		
+		}while(1 == 1);
+		enemy.DamageEnemy (Damage);
+		yield return 0;
 	}
 }

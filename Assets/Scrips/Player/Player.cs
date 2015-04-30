@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ZombieManager : MonoBehaviour {
+public class Player : MonoBehaviour {
 
+	public string name;
 	// Use this for initialization
 	void Start () {
 	

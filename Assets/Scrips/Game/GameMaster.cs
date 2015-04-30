@@ -8,7 +8,7 @@ public class GameMaster : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (gm == null) {
-			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
+			gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster>();
 		}
 	}
 	
@@ -19,5 +19,13 @@ public class GameMaster : MonoBehaviour {
 
 	public static void KillEnemy (Zombie1Health enemy) {
 		Destroy (enemy.gameObject);
+	}
+
+	public static void KillEnemy(Zombie enemy){
+		Destroy (enemy.gameObject);
+	}
+
+	public static void KillBullet(Bullet bullet){
+		Destroy(bullet.gameObject);
 	}
 }

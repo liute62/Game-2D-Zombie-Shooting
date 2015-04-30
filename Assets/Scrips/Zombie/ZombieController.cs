@@ -4,15 +4,14 @@ using System.Collections;
 public class ZombieController : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject[] Players;
+	private GameObject[] Players;
 	private GameObject CurrentPlayer;
 	public float InitialSpeed = 1.0f;
 	public enum Direction {Up,Down,Left,Right}
 	public Direction direction = Direction.Down;
 	void Start () {
-		if (Players != null) {
-			CurrentPlayer = Players[0];	
-		}
+		Players = GameObject.FindGameObjectsWithTag("Player");
+		CurrentPlayer = Players[0];
 		Invoke ("WaitStart",1.0f);
 	}
 
