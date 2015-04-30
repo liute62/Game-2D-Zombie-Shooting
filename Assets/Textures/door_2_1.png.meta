@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: 2086d67a5688a014f8a019860cd2c352
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: door_2_1_0
+    21300002: door_2_1_1
+    21300004: door_2_1_2
+    21300006: door_2_1_3
+    21300008: door_2_1_4
+    21300010: door_2_1_5
+    21300012: door_2_1_6
+    21300014: door_2_1_7
+    21300016: door_2_1_8
+    21300018: door_2_1_9
+    21300020: door_2_1_10
+    21300022: door_2_1_11
+    21300024: door_2_1_12
+    21300026: door_2_1_13
+    21300028: door_2_1_14
+    21300030: door_2_1_15
+    21300032: door_2_1_16
+    21300034: door_2_1_17
+    21300036: door_2_1_18
+    21300038: door_2_1_19
+    21300040: door_2_1_20
+    21300042: door_2_1_21
+    21300044: door_2_1_22
+    21300046: door_2_1_23
+    21300048: door_2_1_24
+    21300050: door_2_1_25
+    21300052: door_2_1_26
+    21300054: door_2_1_27
+    21300056: door_2_1_28
+    21300058: door_2_1_29
+    21300060: door_2_1_30
+    21300062: door_2_1_31
+    21300064: door_2_1_32
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: door_2_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 384
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 197
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 197
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 197
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_5
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 197
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_6
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 192
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 192
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_11
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 192
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 15
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 132
+        width: 15
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 15
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_15
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 132
+        width: 15
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 132
+        width: 15
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_17
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 132
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_20
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 160
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_21
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 160
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_22
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 160
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 67
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 67
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_26
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 67
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_27
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 67
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 15
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_29
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2
+        width: 15
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 15
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_31
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 2
+        width: 15
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: door_2_1_32
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 2
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
