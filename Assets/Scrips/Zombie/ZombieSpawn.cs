@@ -32,7 +32,7 @@ public class ZombieSpawn : MonoBehaviour {
 	}
 	
 	private void CreateAZombie(){
-		GameObject zombie = Zombies [0];
+		GameObject zombie = Zombies [Random.Range(0,3)];
 		GameObject newZombie = (GameObject)Instantiate (zombie,transform.position,Quaternion.identity);
 		newZombie.transform.position = new Vector3(RandomX(),RandomY(),-5);
 	}
