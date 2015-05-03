@@ -22,15 +22,12 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		instance = this;
 		moveDirection = Vector3.right;
+		gameAttribute = GameAttribute.instance;
 		Invoke ("WaitStart",0.2f);
 	}
 
 	void WaitStart(){
 		StartCoroutine(UpdateAction());
-	}
-
-	void initial(){
-		gameAttribute = GameAttribute.instance;
 	}
 
 	IEnumerator UpdateAction(){
@@ -123,6 +120,7 @@ public class PlayerController : MonoBehaviour {
 	private void Shot(){
 		//initEffect (GunEffect);
 		initPrefab(BulletPrefab,new Vector3(0,-0.05f,0));
+		GameAttribute.clipUpdate ();
 	}
 
 	private GameObject initPrefab(GameObject prefab,Vector3 pos){

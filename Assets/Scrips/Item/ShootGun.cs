@@ -11,7 +11,7 @@ public class ShootGun : MonoBehaviour {
 	Transform bulletSpawn;
 	Transform bulletDirection;
 	RaycastHit2D hit;
-	Zombie1Health enemy;
+	ZombieHealth enemy;
 	// Use this for initialization
 	void Start () {
 		bulletSpawn = transform.FindChild ("BulletSpawn");
@@ -56,7 +56,7 @@ public class ShootGun : MonoBehaviour {
 		}
 		if (hit.collider != null) {
 			Debug.Log ("hit something");
-			enemy = hit.collider.GetComponent<Zombie1Health>();
+			enemy = hit.collider.GetComponent<ZombieHealth>();
 			if (enemy != null){
 				Debug.Log ("hit zombie1");
 				StartCoroutine("WaitForBulletTouchZombie");

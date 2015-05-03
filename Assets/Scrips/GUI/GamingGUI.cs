@@ -20,5 +20,25 @@ public class GamingGUI : MonoBehaviour {
 			gameAttribute = GameAttribute.instance;
 		}
 		ScoreText.text = gameAttribute.Score.ToString();
+		setTimeText ();
+		GoldText.text = gameAttribute.Gold.ToString ();
+		setClipText ();
+	}
+
+	private void setTimeText(){
+		string minute = gameAttribute.Minute.ToString();
+		string second = "";
+		if (gameAttribute.Second < 10) {
+			second = "0"+gameAttribute.Second.ToString();
+		}else{
+			second = gameAttribute.Second.ToString();
+		}
+		TimeText.text = minute + ":" + second;
+	}
+
+	private void setClipText(){
+		string clip = gameAttribute.Clip.ToString ();
+		string leftClip = gameAttribute.LeftClip.ToString ();
+		ClipText.text = clip + "/" + leftClip;
 	}
 }
