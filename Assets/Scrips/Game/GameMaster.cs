@@ -17,7 +17,7 @@ public class GameMaster : MonoBehaviour {
 		
 	}
 
-	public static void KillEnemy (Zombie1Health enemy) {
+	public static void KillEnemy (ZombieHealth enemy) {
 		Destroy (enemy.gameObject);
 	}
 
