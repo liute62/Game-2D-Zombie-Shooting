@@ -10,12 +10,15 @@ public class Bullet : MonoBehaviour {
 	float initialTimeNum;
 	PlayerController controller;
 	Zombie[] zombies;
+	ZombieHealth zombieHealth;
+	GameAttribute gameAttribute;
 	// Use this for initialization
 	void Start () {
 		initialTime = Time.time;
 		initialTimeNum = MoveTime;
 		controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 		direction = controller.direction;
+		gameAttribute = GameAttribute.instance;
 	}
 	
 	// Update is called once per frame
@@ -58,7 +61,9 @@ public class Bullet : MonoBehaviour {
 			zombies[i] = zombieObjects[i].GetComponent<Zombie>();
 			if(checkRange(zombies[i].transform.position,transform.position,zombies[i].width/2,zombies[i].height/2)){
 				Debug.Log("Hit it");
-				GameMaster.KillEnemy(zombies[i]);
+				zombieHealth = zombieObjects[i].GetComponent<ZombieHealth>();
+				zombieHealth.DamageEnemy(gameAttribute.weaponPower);
+				GameMaster.KillBullet(this);
 			}
 		}
 	}

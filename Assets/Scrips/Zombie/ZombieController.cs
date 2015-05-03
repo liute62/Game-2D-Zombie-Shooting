@@ -88,4 +88,16 @@ public class ZombieController : MonoBehaviour {
 		direction = Direction.Right;
 	}
 
+	public void Backward(){
+		Vector3 pos = transform.position;
+		if(direction == Direction.Up){
+			this.transform.position = new Vector3(pos.x,pos.y-1,pos.z);
+		}else if(direction == Direction.Down){
+			this.transform.position = new Vector3(pos.x,pos.y+1,pos.z);
+		}else if(direction == Direction.Left){
+			this.transform.position = new Vector3(pos.x+1,pos.y,pos.z);
+		}else if(direction == Direction.Right){
+			this.transform.position = new Vector3(pos.x-1,pos.y,pos.z);
+		}
+	}
 }
