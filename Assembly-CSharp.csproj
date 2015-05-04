@@ -56,6 +56,10 @@
      <Compile Include="Assets\Scrips\Game\GameMaster.cs" />
      <Compile Include="Assets\Scrips\Game\PlotManager.cs" />
      <Compile Include="Assets\Scrips\Item\Bullet.cs" />
+     <Compile Include="Assets\Scrips\Item\MedKit.cs" />
+     <Compile Include="Assets\Scrips\Item\Pammo.cs" />
+     <Compile Include="Assets\Scrips\Item\Rammo.cs" />
+     <Compile Include="Assets\Scrips\Item\Sammo.cs" />
      <Compile Include="Assets\Scrips\Item\ShootGun.cs" />
      <Compile Include="Assets\Scrips\Item\Weapon.cs" />
      <Compile Include="Assets\Scrips\Map\MapData.cs" />
