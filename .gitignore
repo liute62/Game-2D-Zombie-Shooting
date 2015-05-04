@@ -1,3 +1,8 @@
 /Library
 /Temp
 /zombiegame
+*.csproj
+Assembly-CSharp-vs.csproj
+*.csproj
+Assembly-CSharp.csproj
+*.csproj

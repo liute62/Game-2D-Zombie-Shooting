@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 6e56994ec7e12774491803dedc465149
-timeCreated: 1430717078
-=======
-guid: 0af6d884467b76a4db4e4fcb47d86200
-timeCreated: 1430680558
->>>>>>> origin/mike_Laritz_branch
+guid: 103d1034601602846969e11ec0b9b720
+timeCreated: 1430680496
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
