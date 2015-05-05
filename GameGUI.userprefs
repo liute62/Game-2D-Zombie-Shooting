@@ -1,0 +1,22 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NGUI\Scripts\Interaction\UIDragCamera.cs">
+    <Files>
+      <File FileName="Assets\NGUI\Scripts\Interaction\UIDragCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\About.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LoadGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arcade.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Story.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Scripts\Interaction\UIDragScrollView.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\lix9\Documents\Unity\GameGUI\Assets\NGUI\Scripts\Internal\Localization.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\lix9\Documents\Unity\GameGUI\Assets\NGUI\Scripts\Internal\NGUIMath.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\lix9\Documents\Unity\GameGUI\Assets\NGUI\Scripts\UI\UIRoot.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
