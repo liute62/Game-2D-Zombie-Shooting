@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scrips\Game\PlotManager.cs" />
      <Compile Include="Assets\Scrips\Item\Bullet.cs" />
      <Compile Include="Assets\Scrips\Item\DoorRemoval.cs" />
+     <Compile Include="Assets\Scrips\Item\Item.cs" />
      <Compile Include="Assets\Scrips\Item\MedKit.cs" />
      <Compile Include="Assets\Scrips\Item\Pammo.cs" />
      <Compile Include="Assets\Scrips\Item\Rammo.cs" />
