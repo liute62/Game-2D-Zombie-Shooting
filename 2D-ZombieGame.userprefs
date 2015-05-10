@@ -1,27 +1,7 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\Item\Bullet.cs">
-    <Files>
-      <File FileName="Assets\Scrips\GUI\GameOver.cs" Line="19" Column="35" />
-      <File FileName="Assets\Scrips\Game\GameMaster.cs" Line="34" Column="83" />
-      <File FileName="Assets\Scrips\Zombie\ZombieController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Player\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Player\PlayerAnimator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Player\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Player\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Zombie\Zombie.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\GUI\GamingGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Item\ShootGun.cs" Line="44" Column="1" />
-      <File FileName="Assets\Scrips\Item\Bullet.cs" Line="62" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scrips/Zombie/ZombieHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Desktop\2D-ZombieGame\Assets\Scrips\GUI\GamingGUI.cs">
     <Files>
-      <File FileName="Assets/Scrips/Zombie/ZombieHealth.cs" Line="30" Column="1" />
-      <File FileName="Assets/Scrips/Game/GameAttribute.cs" Line="26" Column="20" />
-      <File FileName="Assets/Scrips/Game/GameMaster.cs" Line="30" Column="3" />
->>>>>>> origin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
