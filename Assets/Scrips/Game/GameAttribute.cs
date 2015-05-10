@@ -13,6 +13,8 @@ public class GameAttribute : MonoBehaviour {
 	public int LeftClip;
 	private float initialTime;
 	public int weaponPower;
+	public float playerMaxHealth;
+	public float playerCurrentHealth;
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -24,6 +26,8 @@ public class GameAttribute : MonoBehaviour {
 		Clip = initialClip;
 		LeftClip = 90;
 		weaponPower = 10;
+		playerMaxHealth = 100;
+		playerCurrentHealth = 100;
 		initialTime = Time.time;
 	}
 

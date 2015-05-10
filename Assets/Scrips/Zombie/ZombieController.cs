@@ -11,6 +11,9 @@ public class ZombieController : MonoBehaviour {
 	public Direction direction = Direction.Down;
 	float initialTime;
 	int action;
+	public float AttackRange;
+	public float AttackIntervel; // the next attack should be after how many seconds 
+	float attackInitialTime;
 	void Start () {
 		Players = GameObject.FindGameObjectsWithTag("Player");
 		CurrentPlayer = Players[0];
@@ -20,11 +23,13 @@ public class ZombieController : MonoBehaviour {
 	void WaitStart(){
 		initialTime = Time.time;
 		action = 0;
+		attackInitialTime = Time.time;
 		StartCoroutine(UpdateAction());
 	}
 
 	IEnumerator UpdateAction(){
 		while (true) {
+			CheckAttackRange(CurrentPlayer);
 			if(Time.time > initialTime + 0.1){
 				action = FindThePlayer(CurrentPlayer);
 				initialTime = Time.time;
@@ -45,6 +50,28 @@ public class ZombieController : MonoBehaviour {
 			}
 
 			yield return 0;		
+		}
+	}
+
+	private void CheckAttackRange(GameObject player){
+		if (player == null) {
+			player = CurrentPlayer;	
+		}
+		float zombie_x = transform.localPosition.x;
+		float zombie_y = transform.localPosition.y;
+		float player_x = player.transform.localPosition.x;
+		float player_y = player.transform.localPosition.y;
+		if (Mathf.Abs (zombie_x - player_x) < AttackRange && Mathf.Abs (zombie_y - player_y) < AttackRange) {
+			//Check the attack intervel
+			if(Time.time > attackInitialTime + AttackIntervel){
+				//Now Attack the player
+				GameAttribute.instance.playerCurrentHealth -= this.GetComponentInParent<Zombie>().attackAttr;
+				if(GameAttribute.instance.playerCurrentHealth <= 0){
+					GameAttribute.instance.playerCurrentHealth = 0;
+					GameMaster.GameOver();
+				}
+				attackInitialTime = Time.time;
+			}
 		}
 	}
 
