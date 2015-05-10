@@ -9,6 +9,7 @@ public class GamingGUI : MonoBehaviour {
 	public Text TimeText;
 	public Text GoldText;
 	public Text ClipText;
+	public Text CurrentHPText;
 	private GameAttribute gameAttribute;
 	void Start () {
 		gameAttribute = GameAttribute.instance;
@@ -40,5 +41,9 @@ public class GamingGUI : MonoBehaviour {
 		string clip = gameAttribute.Clip.ToString ();
 		string leftClip = gameAttribute.LeftClip.ToString ();
 		ClipText.text = clip + "/" + leftClip;
+	}
+
+	private void setCurrentHPText(){
+	
 	}
 }

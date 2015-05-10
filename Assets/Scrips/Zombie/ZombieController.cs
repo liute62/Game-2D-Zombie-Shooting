@@ -9,6 +9,8 @@ public class ZombieController : MonoBehaviour {
 	public float InitialSpeed = 1.0f;
 	public enum Direction {Up,Down,Left,Right}
 	public Direction direction = Direction.Down;
+	float initialTime;
+	int action;
 	void Start () {
 		Players = GameObject.FindGameObjectsWithTag("Player");
 		CurrentPlayer = Players[0];
@@ -16,12 +18,18 @@ public class ZombieController : MonoBehaviour {
 	}
 
 	void WaitStart(){
+		initialTime = Time.time;
+		action = 0;
 		StartCoroutine(UpdateAction());
 	}
 
 	IEnumerator UpdateAction(){
 		while (true) {
-			switch(FindThePlayer(CurrentPlayer)){
+			if(Time.time > initialTime + 0.1){
+				action = FindThePlayer(CurrentPlayer);
+				initialTime = Time.time;
+			}
+			switch(action){
 			case 0:
 				Up();
 				break;
@@ -35,6 +43,7 @@ public class ZombieController : MonoBehaviour {
 				Right();
 				break;
 			}
+
 			yield return 0;		
 		}
 	}
