@@ -28,4 +28,8 @@ public class GameMaster : MonoBehaviour {
 	public static void KillBullet(Bullet bullet){
 		Destroy(bullet.gameObject);
 	}
+
+	public static void GameOver(){
+		GameObject.FindGameObjectWithTag ("GameOver").GetComponent<GameOver> ().show ();
+	}
 }
