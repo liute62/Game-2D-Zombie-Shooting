@@ -9,6 +9,8 @@ public class GamingGUI : MonoBehaviour {
 	public Text TimeText;
 	public Text GoldText;
 	public Text ClipText;
+	public Text CurrentHPText;
+	public Image CurrentHPImage;
 	private GameAttribute gameAttribute;
 	void Start () {
 		gameAttribute = GameAttribute.instance;
@@ -23,6 +25,7 @@ public class GamingGUI : MonoBehaviour {
 		setTimeText ();
 		GoldText.text = gameAttribute.Gold.ToString ();
 		setClipText ();
+		setCurrentHPText ();
 	}
 
 	private void setTimeText(){
@@ -40,5 +43,15 @@ public class GamingGUI : MonoBehaviour {
 		string clip = gameAttribute.Clip.ToString ();
 		string leftClip = gameAttribute.LeftClip.ToString ();
 		ClipText.text = clip + "/" + leftClip;
+	}
+
+	private void setCurrentHPText(){
+		float result = gameAttribute.playerCurrentHealth / gameAttribute.playerMaxHealth;
+		CurrentHPText.text = (result * 100).ToString() + "%";
+		setCurrentImageText (result);
+	}
+
+	private void setCurrentImageText(float percent){
+		CurrentHPImage.fillAmount = percent;
 	}
 }
