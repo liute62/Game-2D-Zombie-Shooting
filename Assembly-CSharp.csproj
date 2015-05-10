@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scrips\ChangeLevel.cs" />
      <Compile Include="Assets\Scrips\Fading.cs" />
+     <Compile Include="Assets\Scrips\GUI\GameOver.cs" />
      <Compile Include="Assets\Scrips\GUI\GamingGUI.cs" />
      <Compile Include="Assets\Scrips\GUI\MiniMap.cs" />
      <Compile Include="Assets\Scrips\Game\CameStatistics.cs" />
