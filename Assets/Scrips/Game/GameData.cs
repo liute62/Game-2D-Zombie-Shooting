@@ -167,6 +167,29 @@ public class GameData : MonoBehaviour {
 		PlayerPrefs.SetInt ("Level_Current",level);
 	}
 
+	public static void setNextLevel(){
+		int level = getCurrentLevel ();
+		level++;
+		PlayerPrefs.SetInt ("Level_Current",level);
+	}
+
+	public static string getCurrentLevelName(){
+		int index = GameData.getCurrentLevel ();
+		return getLevelNameByIndex (index);
+	}
+	public static string getLevelNameByIndex(int index){
+		string result = "";
+		switch (index) {
+			case 1:
+				result = "CollapsedBuildingLevel";
+				break;
+			case 2:
+				result = "StreetLevel";
+				break;
+		}
+		return result;
+	}
+
 	/**********************Health**********************/
 	public static float getMaxHealth(){
 		return PlayerPrefs.GetFloat("Player_Max_Health");

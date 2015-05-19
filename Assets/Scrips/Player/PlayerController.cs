@@ -110,9 +110,11 @@ public class PlayerController : MonoBehaviour {
 				if(GameMaster.isGodMode == true){
 					GameMaster.isGodMode = false;
 					Debug.Log("God Mode Disable");
+					InitialSpeed = 20;
 				}else{
 					GameMaster.isGodMode = true;
 					Debug.Log("God Mode Enable");
+					InitialSpeed = GameData.getPlayerInitialSpeed();
 				}
 			}
 		}

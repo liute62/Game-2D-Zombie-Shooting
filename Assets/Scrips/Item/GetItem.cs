@@ -38,6 +38,10 @@ public class GetItem : MonoBehaviour {
 		case 102:// get a key
 			GameData.setCurrentLevelKeyGet(1);
 			break;
+		case -100:
+			GameData.setNextLevel();
+			Application.LoadLevel(GameData.getCurrentLevelName());
+			break;
 		}
 	}
 }
