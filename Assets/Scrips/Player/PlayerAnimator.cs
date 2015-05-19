@@ -11,7 +11,7 @@ public class PlayerAnimator : MonoBehaviour {
 	public float framesPerSecond;
 	private SpriteRenderer spriteRenderer;
 	public PlayerController controller;
-	
+	AudioClip movingAudio;
 	// Use this for initialization
 	void Start () {
 		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;

@@ -18,11 +18,26 @@ public class PlayerController : MonoBehaviour {
 	public static PlayerController instance;
 	public static string lastPressed;
 	public GameObject BulletPrefab;
+	public bool isPlayerHasWeapon;
+	public bool isWeaponHasAmmo;
 	// Use this for initialization
 	void Start () {
 		instance = this;
 		moveDirection = Vector3.right;
 		gameAttribute = GameAttribute.instance;
+		InitialSpeed = GameData.getPlayerInitialSpeed ();
+	    if (GameData.getCurrentWeaponIndex () > 0) {
+			isPlayerHasWeapon = true;
+		} else {
+			isPlayerHasWeapon = false;
+		}
+
+		if (GameData.getCurrentWeaponAmmoLeft() > 0 || GameData.getCurrentWeaponAmmoUsing() > 0) {
+			isWeaponHasAmmo = true;
+		} else {
+			isWeaponHasAmmo = false;
+		}
+
 		Invoke ("WaitStart",0.2f);
 	}
 
@@ -32,10 +47,25 @@ public class PlayerController : MonoBehaviour {
 
 	IEnumerator UpdateAction(){
 		while (true) {
+			if (GameData.getCurrentWeaponIndex () > 0) {
+				isPlayerHasWeapon = true;
+			} else {
+				isPlayerHasWeapon = false;
+			}
+
+			if (GameData.getCurrentWeaponAmmoLeft() > 0 || GameData.getCurrentWeaponAmmoUsing() > 0) {
+				isWeaponHasAmmo = true;
+			} else {
+				isWeaponHasAmmo = false;
+			}
+
 			if(keyInputEnable){		
 				KeyInput();
 			}if(mouseInputEnable){
 				//mouseInput();
+			}
+			if(GameMaster.instance.isGameOver == true){
+				break;
 			}
 			yield return 0;
 		}
@@ -44,30 +74,48 @@ public class PlayerController : MonoBehaviour {
 	private void KeyInput(){
 
 		if (Input.anyKeyDown) {
+			//SoundManager.instance.PlayingSound ("footstep");
+
 			activeInput = true;		
 		}
-	
-			if(Input.GetKey(KeyCode.A)){
-				lastPressed = "a";
-				state = State.Move;
-				Left();
-				activeInput = false;
-			}else if(Input.GetKey(KeyCode.D)){
-				lastPressed = "d";
-				state = State.Move;
-				Right();
-				activeInput = false;
-			}else if(Input.GetKey(KeyCode.W)){
-				lastPressed = "w";
-				state = State.Move;
-				Up();
-				activeInput = false;
-			}else if(Input.GetKey(KeyCode.S)){
-				lastPressed = "s";
-				state = State.Move;
-				Down();
-				activeInput = false;
+			if (Input.GetKey (KeyCode.A)) {
+			lastPressed = "a";
+			state = State.Move;
+			Left ();
+			activeInput = false;
+		} else if (Input.GetKey (KeyCode.D)) {
+			lastPressed = "d";
+			state = State.Move;
+			Right ();
+			activeInput = false;
+		} else if (Input.GetKey (KeyCode.W)) {
+			lastPressed = "w";
+			state = State.Move;
+			Up ();
+			activeInput = false;
+		} else if (Input.GetKey (KeyCode.S)) {
+			lastPressed = "s";
+			state = State.Move;
+			Down ();
+			activeInput = false;
+		} else if (Input.GetKey (KeyCode.L)) {
+			lastPressed = "L";
+		} else if (Input.GetKey (KeyCode.I)) {
+			if (lastPressed.Equals("L")) {
+				lastPressed = "LI";
 			}
+		} else if (Input.GetKey (KeyCode.U)) {
+			if(lastPressed.Equals("LI")){
+				lastPressed = "LIU";
+				if(GameMaster.isGodMode == true){
+					GameMaster.isGodMode = false;
+					Debug.Log("God Mode Disable");
+				}else{
+					GameMaster.isGodMode = true;
+					Debug.Log("God Mode Enable");
+				}
+			}
+		}
 
 		if (activeInput) {
 			if(Input.GetKey(KeyCode.Space)){	
@@ -119,8 +167,12 @@ public class PlayerController : MonoBehaviour {
 
 	private void Shot(){
 		//initEffect (GunEffect);
-		initPrefab(BulletPrefab,new Vector3(0,-0.05f,0));
-		GameAttribute.clipUpdate ();
+		if (isPlayerHasWeapon) {
+			if(isWeaponHasAmmo){
+				initPrefab (BulletPrefab, new Vector3 (0, -0.05f, 0));
+				GameAttribute.clipUpdate ();
+			}
+		}
 	}
 
 	private GameObject initPrefab(GameObject prefab,Vector3 pos){

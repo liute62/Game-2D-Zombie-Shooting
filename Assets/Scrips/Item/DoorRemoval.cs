@@ -4,6 +4,8 @@ using System.Collections;
 public class DoorRemoval : MonoBehaviour {
 
 	// Use this for initialization
+	public bool canBeRemoval = false;
+	int times = 0;
 	void Start () {
 	
 	}
@@ -14,9 +16,17 @@ public class DoorRemoval : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col){
-		if(col.gameObject.name == "Player_1")
-		{
-			Destroy(this.gameObject);
+		//Debug.Log (times);
+		if (col.gameObject.name == "Player_1") {
+			times++;
+		}
+		if(times == 3){
+			canBeRemoval = true;
+		}if (canBeRemoval) {
+
+			if (col.gameObject.name == "Player_1") {
+				Destroy (this.gameObject);
+			}
 		}
 	}
 }

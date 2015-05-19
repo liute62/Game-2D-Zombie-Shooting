@@ -13,9 +13,15 @@ public class ZombieController : MonoBehaviour {
 	int action;
 	public float AttackRange;
 	public float AttackIntervel; // the next attack should be after how many seconds 
+	public float FindRange; //t
+	public int index;
 	float attackInitialTime;
 	void Start () {
 		Players = GameObject.FindGameObjectsWithTag("Player");
+		InitialSpeed = GameData.getZombieInitialSpeedByIndex (index);
+		AttackIntervel = GameData.getZombieInitialAttackIntervelByIndex (index);
+		AttackRange = GameData.getZombieInitialAttackRangeByIndex (index);
+		FindRange = GameData.getZombieInitialFindRangeByIndex (index);
 		CurrentPlayer = Players[0];
 		Invoke ("WaitStart",1.0f);
 	}
@@ -31,7 +37,12 @@ public class ZombieController : MonoBehaviour {
 		while (true) {
 			CheckAttackRange(CurrentPlayer);
 			if(Time.time > initialTime + 0.1){
-				action = FindThePlayer(CurrentPlayer);
+				if(CheckIfFinding(CurrentPlayer)){
+					action = FindThePlayer(CurrentPlayer);
+				}
+				else{
+					action = WalkAround();
+				}
 				initialTime = Time.time;
 			}
 			switch(action){
@@ -65,6 +76,9 @@ public class ZombieController : MonoBehaviour {
 			//Check the attack intervel
 			if(Time.time > attackInitialTime + AttackIntervel){
 				//Now Attack the player
+				if(GameMaster.isGodMode){
+					return;
+				}
 				GameAttribute.instance.playerCurrentHealth -= this.GetComponentInParent<Zombie>().attackAttr;
 				if(GameAttribute.instance.playerCurrentHealth <= 0){
 					GameAttribute.instance.playerCurrentHealth = 0;
@@ -73,6 +87,20 @@ public class ZombieController : MonoBehaviour {
 				attackInitialTime = Time.time;
 			}
 		}
+	}
+
+	private bool CheckIfFinding(GameObject player){
+		if (player == null) {
+			player = CurrentPlayer;	
+		}
+		float zombie_x = transform.localPosition.x;
+		float zombie_y = transform.localPosition.y;
+		float player_x = player.transform.localPosition.x;
+		float player_y = player.transform.localPosition.y;
+		if(calculate_dis(zombie_x,player_x,zombie_y,player_y) < FindRange){
+			return true;
+		}
+		return false;
 	}
 
 	private int FindThePlayer(GameObject player){
@@ -102,6 +130,14 @@ public class ZombieController : MonoBehaviour {
 				return 0;
 			}
 		}
+	}
+
+	private int WalkAround(){
+		int action = Random.Range (0,4);
+		if (action == 4) {
+			action = 3;
+		}
+		return action;
 	}
 
 	private void Up(){
@@ -135,5 +171,13 @@ public class ZombieController : MonoBehaviour {
 		}else if(direction == Direction.Right){
 			this.transform.position = new Vector3(pos.x-1,pos.y,pos.z);
 		}
+	}
+
+	private float calculate_dis(float x1,float x2,float y1,float y2){
+			float tmp1 = Mathf.Abs (x1 - x2);
+			float tmp2 = Mathf.Abs (y1 - y2);
+			float tmp3 = tmp1 * tmp1 + tmp2 * tmp2;
+			tmp3 = Mathf.Pow ((float)tmp3,0.5f);
+			return tmp3;
 	}
 }

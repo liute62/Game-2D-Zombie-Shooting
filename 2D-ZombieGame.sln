@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{F0494A9A-1C9A-2B00-1186-693D1E0733CD}") = "2D-ZombieGame", "Assembly-CSharp.csproj", "{F8C6859B-293A-3964-F3D7-BC24EFCE7E46}"
 EndProject
+Project("{F0494A9A-1C9A-2B00-1186-693D1E0733CD}") = "2D-ZombieGame", "Assembly-CSharp-Editor.csproj", "{99CD30F3-4FB2-B3FB-34E7-2BDAEBCE9B46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{F8C6859B-293A-3964-F3D7-BC24EFCE7E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C6859B-293A-3964-F3D7-BC24EFCE7E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C6859B-293A-3964-F3D7-BC24EFCE7E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99CD30F3-4FB2-B3FB-34E7-2BDAEBCE9B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99CD30F3-4FB2-B3FB-34E7-2BDAEBCE9B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99CD30F3-4FB2-B3FB-34E7-2BDAEBCE9B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99CD30F3-4FB2-B3FB-34E7-2BDAEBCE9B46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																											GlobalSection(MonoDevelopProperties) = preSolution
+																																																		GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																							GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master

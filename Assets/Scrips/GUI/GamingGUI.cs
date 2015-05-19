@@ -12,8 +12,11 @@ public class GamingGUI : MonoBehaviour {
 	public Text CurrentHPText;
 	public Image CurrentHPImage;
 	private GameAttribute gameAttribute;
+	private int CurrentWeaponIndex;
+	public Image[] weaponImages;
 	void Start () {
 		gameAttribute = GameAttribute.instance;
+		CurrentWeaponIndex = gameAttribute.currentWeaponIndex;
 	}
 	
 	// Update is called once per frame
@@ -21,11 +24,13 @@ public class GamingGUI : MonoBehaviour {
 		if(gameAttribute == null){
 			gameAttribute = GameAttribute.instance;
 		}
-		ScoreText.text = gameAttribute.Score.ToString();
-		setTimeText ();
-		GoldText.text = gameAttribute.Gold.ToString ();
-		setClipText ();
-		setCurrentHPText ();
+		if(GameMaster.instance.isGameOver != true){
+			ScoreText.text = gameAttribute.Score.ToString();
+			setTimeText ();
+			GoldText.text = gameAttribute.Gold.ToString ();
+			setWeapon ();
+			setCurrentHPText ();
+		}
 	}
 
 	private void setTimeText(){
@@ -39,6 +44,28 @@ public class GamingGUI : MonoBehaviour {
 		TimeText.text = minute + ":" + second;
 	}
 
+	private void setWeapon(){
+		CurrentWeaponIndex = gameAttribute.currentWeaponIndex;
+		setWeaponImage(CurrentWeaponIndex);
+		if (CurrentWeaponIndex == 0) {
+			setNullClipText ();
+		} else {
+			setClipText();
+		}
+	}
+
+	private void setWeaponImage(int index){
+		for(int i = 0; i != weaponImages.Length; i++){
+			if(i == index){
+				//weaponImages[i].transform.position = new Vector3(0,0,0);	
+				weaponImages[i].fillAmount = 100;
+			}else{
+				//weaponImages[i].transform.position = new Vector3(0,0,1000);	
+				weaponImages[i].fillAmount = 0;
+			}
+		}
+	}
+
 	private void setClipText(){
 		string clip = gameAttribute.Clip.ToString ();
 		string leftClip = gameAttribute.LeftClip.ToString ();
@@ -49,6 +76,10 @@ public class GamingGUI : MonoBehaviour {
 		float result = gameAttribute.playerCurrentHealth / gameAttribute.playerMaxHealth;
 		CurrentHPText.text = (result * 100).ToString() + "%";
 		setCurrentImageText (result);
+	}
+	
+	private void setNullClipText(){
+		ClipText.text = "";
 	}
 
 	private void setCurrentImageText(float percent){

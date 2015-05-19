@@ -15,27 +15,42 @@ public class GameAttribute : MonoBehaviour {
 	public int weaponPower;
 	public float playerMaxHealth;
 	public float playerCurrentHealth;
+	public bool isWeaponChange;
+	public int currentWeaponIndex;
 	// Use this for initialization
 	void Start () {
 		instance = this;
-		Score = 0;
-		Minute = 5;
-		Second = 0;
-		Gold = 0;
-		initialClip = 30;
-		Clip = initialClip;
-		LeftClip = 90;
-		weaponPower = 10;
-		playerCurrentHealth = 100;
-		playerMaxHealth = 100;
+		Score = long.Parse(GameData.getScore());
+		Gold = GameData.getGold();
+		initialClip = GameData.getCurrentWeaponAmmoInitial();
+		Clip = GameData.getCurrentWeaponAmmoUsing();
+		LeftClip = GameData.getCurrentWeaponAmmoLeft();
+		playerMaxHealth = GameData.getMaxHealth();
+		playerCurrentHealth = GameData.getCurrentHealth();
+		initialByLevel();
 		initialTime = Time.time;
+		currentWeaponIndex = GameData.getCurrentWeaponIndex();
+	}
+
+	void initialByLevel(){
+		int index = GameData.getCurrentLevel();
+		switch(index){
+			case 1:
+				Minute = GameData.Level_1.General.timeMinute;
+				Second = GameData.Level_1.General.timeSecond;
+				weaponPower = GameData.Weapon.Pistol.power;
+				break;
+		   default:
+			break;
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
-		Score++;
 		timeUpdate ();
-		Gold++;
+		Clip = GameData.getCurrentWeaponAmmoUsing();
+		LeftClip = GameData.getCurrentWeaponAmmoLeft();
+		initialClip = GameData.getCurrentWeaponAmmoInitial();
 	}
 
 	private void timeUpdate(){
@@ -57,6 +72,9 @@ public class GameAttribute : MonoBehaviour {
 	}
 
 	public static void clipUpdate(){
+		if (GameMaster.isGodMode) {
+			return;
+		}
 		if(GameAttribute.instance != null){
 			GameAttribute tmp = GameAttribute.instance;
 			if(tmp.Clip > 0){
@@ -75,6 +93,8 @@ public class GameAttribute : MonoBehaviour {
 					//that means bullet is no left now.
 				}
 			}
+			GameData.setCurrentWeaponAmmoUsing(tmp.Clip);
+			GameData.setCurrentWeaponAmmoLeft(tmp.LeftClip);
 		}
 	}
 }

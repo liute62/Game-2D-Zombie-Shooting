@@ -55,6 +55,11 @@ public class Bullet : MonoBehaviour {
 	}
 
 	private void checkCollide(){
+		checkForZombie ();
+		//checkForDoor ();
+	}
+
+	private void checkForZombie(){
 		GameObject[] zombieObjects = GameObject.FindGameObjectsWithTag("Zombie");
 		zombies = new Zombie[zombieObjects.Length];
 		for(int i = 0;i != zombieObjects.Length;i++){
@@ -68,10 +73,25 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
+	private void checkForDoor(){
+		GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+		for (int i = 0; i != doors.Length; i++) {
+			if(checkRange(doors[i].transform.position,transform.position,1,2)){
+				Debug.Log("Hit the door");
+			}
+		}
+	}
+
 	private bool checkRange(Vector3 vec1,Vector3 vec2,float x_range,float y_range){
 		if(Mathf.Abs(vec1.x - vec2.x)< x_range && Mathf.Abs(vec1.y - vec2.y) < y_range){
 			return true;
 		}
 		return false;
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.CompareTag("Door")) {
+			Debug.Log ("Hit Door");
+		}
 	}
 }

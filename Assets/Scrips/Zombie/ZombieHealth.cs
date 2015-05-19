@@ -13,19 +13,29 @@ public class ZombieHealth : MonoBehaviour {
 
 	public int index;
 	private float health;
-
+	private long score;
+	private int goldBase;
 	void Start(){
 		EnemyStats stats = new EnemyStats ();
-		health = stats.health[index];
+		health = GameData.getZombieHealthByIndex (index);
+		score = long.Parse(GameData.getZombieInitialScoreByIndex (index));
+		goldBase = int.Parse (GameData.getZombieInitialGoldByIndex (index));
+		//Debug.Log (goldBase);
 	}
 
 
 
 	public void DamageEnemy (int damage){
+		if (GameMaster.isGodMode) {
+			health = 0;
+		}
 		HitBackward();
 		health -= damage;
 		if (health <= 0) {
 			GameMaster.KillEnemy(this);
+			GameAttribute.instance.Score += score;
+			long tmp =  GameMaster.ZombieGoldGenerate(goldBase);
+			GameAttribute.instance.Gold += tmp;
 		}
 	}
 
@@ -33,4 +43,5 @@ public class ZombieHealth : MonoBehaviour {
 		ZombieController controller = gameObject.GetComponent<ZombieController>();
 		controller.Backward();
 	}
+	
 }
