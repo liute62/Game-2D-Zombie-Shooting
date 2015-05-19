@@ -18,15 +18,17 @@ public class DoorRemoval : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col){
 		//Debug.Log (times);
 		if (col.gameObject.name == "Player_1") {
-			times++;
-		}
-		if(times == 3){
-			canBeRemoval = true;
-		}if (canBeRemoval) {
 
-			if (col.gameObject.name == "Player_1") {
+		if (canBeRemoval) {
+
 				Destroy (this.gameObject);
-			}
-		}
+		
+		}else{
+			int getKey = GameData.getCurrentLevelKeyGet();
+			if(getKey == 1){
+					Destroy(this.gameObject);	
+			 }
+		 }
+	  }
 	}
 }

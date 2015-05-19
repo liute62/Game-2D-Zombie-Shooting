@@ -12,6 +12,7 @@ public class GameData : MonoBehaviour {
 		setCurrentWeaponIndex (0);
 		setPlayerInitialSpeed (5);
 		resetZombie ();
+		setKeyGetByLevel (1,0);
 		//setCurrentWeaponAmmoInitial (30);
 		//setCurrentWeaponAmmoLeft (90);
 		//setCurrentWeaponAmmoUsing (30);
@@ -250,5 +251,24 @@ public class GameData : MonoBehaviour {
 	public static void setCurrentWeaponAmmoLeft(int ammo){
 		int index = getCurrentWeaponIndex ();
 		PlayerPrefs.SetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_Left",ammo);
+	}
+
+	/**********************Weapon**********************/
+	public static void setKeyGetByLevel(int level,int trueOrFalse){
+		PlayerPrefs.SetInt("Key_"+level.ToString()+"_"+"Get",trueOrFalse);
+	}
+
+	public static int getKeyGet(int level){
+		return PlayerPrefs.GetInt("Key_"+level.ToString()+"_"+"Get");
+	}
+
+	public static void setCurrentLevelKeyGet(int trueOrFalse){
+		int level = getCurrentLevel ();
+		PlayerPrefs.SetInt("Key_"+level.ToString()+"_"+"Get",trueOrFalse);
+	}
+
+	public static int getCurrentLevelKeyGet(){
+		int level = getCurrentLevel ();
+		return PlayerPrefs.GetInt("Key_"+level.ToString()+"_"+"Get");
 	}
 }

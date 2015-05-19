@@ -35,6 +35,9 @@ public class GetItem : MonoBehaviour {
 			GameData.setCurrentWeaponAmmoLeft(90);
 			GameData.setCurrentWeaponAmmoUsing(30);
 			break;
+		case 102:// get a key
+			GameData.setCurrentLevelKeyGet(1);
+			break;
 		}
 	}
 }
