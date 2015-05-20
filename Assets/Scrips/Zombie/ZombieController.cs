@@ -80,6 +80,7 @@ public class ZombieController : MonoBehaviour {
 					return;
 				}
 				GameAttribute.instance.playerCurrentHealth -= this.GetComponentInParent<Zombie>().attackAttr;
+				GameData.setCurrentHealth(GameAttribute.instance.playerCurrentHealth);
 				if(GameAttribute.instance.playerCurrentHealth <= 0){
 					GameAttribute.instance.playerCurrentHealth = 0;
 					GameMaster.GameOver();

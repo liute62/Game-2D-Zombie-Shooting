@@ -37,7 +37,9 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			isWeaponHasAmmo = false;
 		}
-
+		if (GameMaster.isGodMode == true) {
+			InitialSpeed = 20;		
+		}
 		Invoke ("WaitStart",0.2f);
 	}
 
@@ -110,11 +112,11 @@ public class PlayerController : MonoBehaviour {
 				if(GameMaster.isGodMode == true){
 					GameMaster.isGodMode = false;
 					Debug.Log("God Mode Disable");
-					InitialSpeed = 20;
+					InitialSpeed = GameData.getPlayerInitialSpeed();
 				}else{
 					GameMaster.isGodMode = true;
 					Debug.Log("God Mode Enable");
-					InitialSpeed = GameData.getPlayerInitialSpeed();
+					InitialSpeed = 20;
 				}
 			}
 		}

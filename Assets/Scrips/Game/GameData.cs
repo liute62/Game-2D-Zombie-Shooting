@@ -13,9 +13,6 @@ public class GameData : MonoBehaviour {
 		setPlayerInitialSpeed (5);
 		resetZombie ();
 		setKeyGetByLevel (1,0);
-		//setCurrentWeaponAmmoInitial (30);
-		//setCurrentWeaponAmmoLeft (90);
-		//setCurrentWeaponAmmoUsing (30);
 	}
 
 	public static void resetZombie(){
@@ -27,6 +24,33 @@ public class GameData : MonoBehaviour {
 		setZombieInitialHealthByIndex (0,100);
 		setZombieInitialScoreByIndex (0, "100");
 		setZombieInitialGoldByIndex (0,"100");
+
+		setZombieInitialSpeedByIndex (1,6);
+		setZombieInitialAttackByIndex (1,15);
+		setZombieInitialAttackIntervelByIndex (1,2);
+		setZombieInitialAttackRangeByIndex (1,2f);
+		setZombieInitialFindRangeByIndex (1,20);
+		setZombieInitialHealthByIndex (1,200);
+		setZombieInitialScoreByIndex (1, "300");
+		setZombieInitialGoldByIndex (1,"200");
+
+		setZombieInitialSpeedByIndex (2,6);
+		setZombieInitialAttackByIndex (2,15);
+		setZombieInitialAttackIntervelByIndex (2,2);
+		setZombieInitialAttackRangeByIndex (2,2f);
+		setZombieInitialFindRangeByIndex (2,20);
+		setZombieInitialHealthByIndex (2,200);
+		setZombieInitialScoreByIndex (2, "300");
+		setZombieInitialGoldByIndex (2,"200");
+
+		setZombieInitialSpeedByIndex (2,6);
+		setZombieInitialAttackByIndex (2,15);
+		setZombieInitialAttackIntervelByIndex (2,2);
+		setZombieInitialAttackRangeByIndex (2,2f);
+		setZombieInitialFindRangeByIndex (2,20);
+		setZombieInitialHealthByIndex (2,200);
+		setZombieInitialScoreByIndex (2, "300");
+		setZombieInitialGoldByIndex (2,"200");
 	}
 
 	public class Human{
@@ -35,12 +59,17 @@ public class GameData : MonoBehaviour {
 		public static float turnSpeed = 2;
 		public static float [] currentHealth = {100,200,300};
 		public static float [] maxHealth = {100,200,300};
+		public static int index;
 	}
 
 	public class Weapon{
 		
 		public class Pistol{
-			public static int power = 10;
+			public static int power = 20;
+		}
+
+		public class Rifile{
+			public static int power = 40;
 		}
 	}
 
@@ -77,7 +106,17 @@ public class GameData : MonoBehaviour {
 	}
 
 	public class Level_2{
-		
+		public class General{
+			public static int timeMinute = 3;
+			public static int timeSecond = 0;
+		}
+	}
+
+	public class Level_3{
+		public class General{
+			public static int timeMinute = 20;
+			public static int timeSecond = 0;
+		}
 	}
 
 	public static void saveTheGame(){
@@ -186,6 +225,9 @@ public class GameData : MonoBehaviour {
 			case 2:
 				result = "StreetLevel";
 				break;
+			case 3:
+				result = "shelter_level";
+				break;
 		}
 		return result;
 	}
@@ -246,6 +288,16 @@ public class GameData : MonoBehaviour {
 		PlayerPrefs.SetInt ("Weapon_Current_Index",index);
 	}
 
+	public static int getCurrentWeaponPower(){
+		int index = getCurrentWeaponIndex ();
+		return PlayerPrefs.GetInt ("Weapon_Current_"+index.ToString()+"_"+"Power");
+	}
+	
+	public static void setCurrentWeaponPower(int power){
+		int index = getCurrentWeaponIndex ();
+		PlayerPrefs.SetInt ("Weapon_Current_"+index.ToString()+"_"+"Power",power);
+	}
+
 	public static int getCurrentWeaponAmmoInitial(){
 		int index = getCurrentWeaponIndex ();
 		return PlayerPrefs.GetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_Initial");
@@ -266,6 +318,17 @@ public class GameData : MonoBehaviour {
 		PlayerPrefs.SetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_Using",ammo);
 	}
 
+	public static int getCurrentWeaponAmmoInitialUsing(){
+		int index = getCurrentWeaponIndex ();
+		return PlayerPrefs.GetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_InitialUsing");
+	}
+	
+	public static void setCurrentWeaponAmmoInitialUsing(int ammo){
+		int index = getCurrentWeaponIndex ();
+		PlayerPrefs.SetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_InitialUsing",ammo);
+	}
+
+
 	public static int getCurrentWeaponAmmoLeft(){
 		int index = getCurrentWeaponIndex ();
 		return PlayerPrefs.GetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_Left");
@@ -274,6 +337,16 @@ public class GameData : MonoBehaviour {
 	public static void setCurrentWeaponAmmoLeft(int ammo){
 		int index = getCurrentWeaponIndex ();
 		PlayerPrefs.SetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_Left",ammo);
+	}
+
+	public static int getCurrentWeaponAmmoInitialLeft(){
+		int index = getCurrentWeaponIndex ();
+		return PlayerPrefs.GetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_InitialLeft");
+	}
+	
+	public static void setCurrentWeaponAmmoInitialLeft(int ammo){
+		int index = getCurrentWeaponIndex ();
+		PlayerPrefs.SetInt("Weapon_Current_"+index.ToString()+"_"+"Ammo"+"_InitialLeft",ammo);
 	}
 
 	/**********************Weapon**********************/

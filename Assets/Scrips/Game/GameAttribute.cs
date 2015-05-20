@@ -38,9 +38,19 @@ public class GameAttribute : MonoBehaviour {
 			case 1:
 				Minute = GameData.Level_1.General.timeMinute;
 				Second = GameData.Level_1.General.timeSecond;
-				weaponPower = GameData.Weapon.Pistol.power;
+				weaponPower = GameData.getCurrentWeaponPower();
 				break;
-		   default:
+			case 2:
+				Minute = GameData.Level_2.General.timeMinute;
+				Second = GameData.Level_2.General.timeSecond;
+				weaponPower = GameData.getCurrentWeaponPower();
+				break;   
+			case 3:
+				Minute = GameData.Level_3.General.timeMinute;
+				Second = GameData.Level_3.General.timeSecond;
+				weaponPower = GameData.getCurrentWeaponPower();	
+				break;
+			default:
 			break;
 		}
 	}
@@ -51,6 +61,7 @@ public class GameAttribute : MonoBehaviour {
 		Clip = GameData.getCurrentWeaponAmmoUsing();
 		LeftClip = GameData.getCurrentWeaponAmmoLeft();
 		initialClip = GameData.getCurrentWeaponAmmoInitial();
+
 	}
 
 	private void timeUpdate(){

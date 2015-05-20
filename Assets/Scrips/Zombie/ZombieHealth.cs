@@ -34,8 +34,10 @@ public class ZombieHealth : MonoBehaviour {
 		if (health <= 0) {
 			GameMaster.KillEnemy(this);
 			GameAttribute.instance.Score += score;
+			GameData.setScore((int)GameAttribute.instance.Score);
 			long tmp =  GameMaster.ZombieGoldGenerate(goldBase);
 			GameAttribute.instance.Gold += tmp;
+			GameData.setGold((int)GameAttribute.instance.Gold);
 		}
 	}
 

@@ -206,6 +206,8 @@
      <Compile Include="Assets\Scrips\Item\ShootGun.cs" />
      <Compile Include="Assets\Scrips\Item\Weapon.cs" />
      <Compile Include="Assets\Scrips\Map\MapData.cs" />
+     <Compile Include="Assets\Scrips\Player\NPCAnimator.cs" />
+     <Compile Include="Assets\Scrips\Player\NPCController.cs" />
      <Compile Include="Assets\Scrips\Player\Player.cs" />
      <Compile Include="Assets\Scrips\Player\PlayerAnimator.cs" />
      <Compile Include="Assets\Scrips\Player\PlayerController.cs" />

@@ -7,4 +7,8 @@ public class GUIController : MonoBehaviour {
 		GameData.Reset ();
 		Application.LoadLevel ("CollapsedBuildingLevel");
 	}
+
+	public void ShopBack(){
+		Application.LoadLevel ("StreetLevel");
+	}
 }
