@@ -65,6 +65,20 @@ public class GetItem : MonoBehaviour {
 			GameData.setNextLevel();
 			StartCoroutine("ChangeLevel",GameData.getCurrentLevelName());
 			break;
+		case -98:
+			if(GameMaster.level3_finished == true){
+				GameMaster.level3_finished = false;
+				this.transform.position = new Vector3 (0, 0, -100);
+				GameData.setNextLevel();
+				StartCoroutine("ChangeLevel",GameData.getCurrentLevelName());
+			}else{
+				this.transform.position = new Vector3 (127, -25, -5);
+			}
+			break;
+		case -97:
+			GameData.setNextLevel();
+			StartCoroutine("ChangeLevel",GameData.getCurrentLevelName());
+			break;
 		case -70:
 			Application.LoadLevel("Scene_shop");
 			break;

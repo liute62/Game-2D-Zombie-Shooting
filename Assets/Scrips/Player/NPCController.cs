@@ -13,10 +13,12 @@ public class NPCController : MonoBehaviour {
 	public State state = State.Move;
 	public static NPCController instance;
 	float initialTime;
+	float sayTime;
 	int action;
 	// Use this for initialization
 	void Start () {
 		initialTime = Time.time;
+		sayTime = Time.time;
 		instance = this;
 		moveDirection = Vector3.right;
 		gameAttribute = GameAttribute.instance;
@@ -33,6 +35,9 @@ public class NPCController : MonoBehaviour {
 			if(Time.time > initialTime + 0.1){
 					action = WalkAround();
 				    initialTime = Time.time;
+			}
+				SoundManager.instance.PlayingSound("HumanVoice");
+				sayTime = Time.time;
 			}
 			switch(action){
 			case 0:

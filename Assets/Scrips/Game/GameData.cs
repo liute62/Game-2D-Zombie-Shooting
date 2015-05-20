@@ -43,14 +43,23 @@ public class GameData : MonoBehaviour {
 		setZombieInitialScoreByIndex (2, "300");
 		setZombieInitialGoldByIndex (2,"200");
 
-		setZombieInitialSpeedByIndex (2,6);
-		setZombieInitialAttackByIndex (2,15);
-		setZombieInitialAttackIntervelByIndex (2,2);
-		setZombieInitialAttackRangeByIndex (2,2f);
-		setZombieInitialFindRangeByIndex (2,20);
-		setZombieInitialHealthByIndex (2,200);
-		setZombieInitialScoreByIndex (2, "300");
-		setZombieInitialGoldByIndex (2,"200");
+		setZombieInitialSpeedByIndex (3,3);
+		setZombieInitialAttackByIndex (3,25);
+		setZombieInitialAttackIntervelByIndex (3,2);
+		setZombieInitialAttackRangeByIndex (3,2f);
+		setZombieInitialFindRangeByIndex (3,30);
+		setZombieInitialHealthByIndex (3,300);
+		setZombieInitialScoreByIndex (3, "400");
+		setZombieInitialGoldByIndex (3,"300");
+
+		setZombieInitialSpeedByIndex (5,2);
+		setZombieInitialAttackByIndex (5,50);
+		setZombieInitialAttackIntervelByIndex (5,5);
+		setZombieInitialAttackRangeByIndex (5,3f);
+		setZombieInitialFindRangeByIndex (5,20);
+		setZombieInitialHealthByIndex (5,2000);
+		setZombieInitialScoreByIndex (5, "100000");
+		setZombieInitialGoldByIndex (5,"1000000");
 	}
 
 	public class Human{
@@ -76,7 +85,7 @@ public class GameData : MonoBehaviour {
 	public class Level_1{
 
 		public class General{
-			public static int timeMinute = 10;
+			public static int timeMinute = 30;
 			public static int timeSecond = 0;
 		}
 
@@ -107,7 +116,7 @@ public class GameData : MonoBehaviour {
 
 	public class Level_2{
 		public class General{
-			public static int timeMinute = 3;
+			public static int timeMinute = 20;
 			public static int timeSecond = 0;
 		}
 	}
@@ -115,6 +124,13 @@ public class GameData : MonoBehaviour {
 	public class Level_3{
 		public class General{
 			public static int timeMinute = 20;
+			public static int timeSecond = 0;
+		}
+	}
+
+	public class Level_4{
+		public class General{
+			public static int timeMinute = 5;
 			public static int timeSecond = 0;
 		}
 	}
@@ -227,6 +243,12 @@ public class GameData : MonoBehaviour {
 				break;
 			case 3:
 				result = "shelter_level";
+				break;
+			case 4:
+				result = "LaboratoryLevel";
+				break;
+			case 5:
+				result = "BridgeLevel";
 				break;
 		}
 		return result;

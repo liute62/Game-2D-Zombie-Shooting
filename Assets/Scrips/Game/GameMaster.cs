@@ -7,6 +7,8 @@ public class GameMaster : MonoBehaviour {
 	public bool isGameOver;
 	public static GameMaster instance;
 	public static bool isGodMode = false;
+	public static int level3_zombie_killed = 0;
+	public static bool level3_finished = false;
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -18,7 +20,13 @@ public class GameMaster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		int level = GameData.getCurrentLevel ();
+		if (level == 3) {
+			if(level3_zombie_killed == 30){
+				level3_zombie_killed = 0;
+				level3_finished = true;
+			}
+		}
 	}
 
 	public static void KillEnemy (ZombieHealth enemy) {
@@ -37,6 +45,11 @@ public class GameMaster : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("GameOver").GetComponent<GameOver> ().show ();
 		SoundManager.instance.PlayingSound ("Scream");
 		Debug.Log ("GameOver");
+		GameMaster.instance.isGameOver = true;
+	}
+
+	public static void GameWin(){
+		GameObject.FindGameObjectWithTag ("GameWin").GetComponent<GameOver> ().missionComplete ();
 		GameMaster.instance.isGameOver = true;
 	}
 

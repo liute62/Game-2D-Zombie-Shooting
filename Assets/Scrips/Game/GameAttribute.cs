@@ -50,6 +50,11 @@ public class GameAttribute : MonoBehaviour {
 				Second = GameData.Level_3.General.timeSecond;
 				weaponPower = GameData.getCurrentWeaponPower();	
 				break;
+			case 4:
+			Minute = GameData.Level_3.General.timeMinute;
+			Second = GameData.Level_3.General.timeSecond;
+			weaponPower = GameData.getCurrentWeaponPower();	
+			break;
 			default:
 			break;
 		}

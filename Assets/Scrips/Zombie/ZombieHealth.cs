@@ -32,8 +32,15 @@ public class ZombieHealth : MonoBehaviour {
 		HitBackward();
 		health -= damage;
 		if (health <= 0) {
+			if(index == 5){
+				//that means zombie boss have been killed
+				GameMaster.GameWin();
+			}
 			SoundManager.instance.PlayingSound("zombieDieVoice");
 			GameMaster.KillEnemy(this);
+			if(GameData.getCurrentLevel() == 3){
+				GameMaster.level3_zombie_killed++;
+			}
 			GameAttribute.instance.Score += score;
 			GameData.setScore((int)GameAttribute.instance.Score);
 			long tmp =  GameMaster.ZombieGoldGenerate(goldBase);
