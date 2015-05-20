@@ -74,11 +74,9 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void KeyInput(){
-
 		if (Input.anyKeyDown) {
-			//SoundManager.instance.PlayingSound ("footstep");
-
 			activeInput = true;		
+			SoundManager.instance.PlayingSound ("footstep");
 		}
 			if (Input.GetKey (KeyCode.A)) {
 			lastPressed = "a";
@@ -175,7 +173,16 @@ public class PlayerController : MonoBehaviour {
 			if(isWeaponHasAmmo){
 				initPrefab (BulletPrefab, new Vector3 (0, -0.05f, 0));
 				GameAttribute.clipUpdate ();
+				getAuidoByWeaponIndex(GameData.getCurrentWeaponIndex());
 			}
+		}
+	}
+
+	private void getAuidoByWeaponIndex(int index){
+		switch(index){
+		case 1:
+			SoundManager.instance.PlayingSound("pistol");
+			break;
 		}
 	}
 

@@ -79,11 +79,14 @@ public class ZombieController : MonoBehaviour {
 				if(GameMaster.isGodMode){
 					return;
 				}
+				SoundManager.instance.PlayingSound("zombieAttack");
 				GameAttribute.instance.playerCurrentHealth -= this.GetComponentInParent<Zombie>().attackAttr;
 				GameData.setCurrentHealth(GameAttribute.instance.playerCurrentHealth);
 				if(GameAttribute.instance.playerCurrentHealth <= 0){
 					GameAttribute.instance.playerCurrentHealth = 0;
-					GameMaster.GameOver();
+					if(!GameMaster.instance.isGameOver){
+						GameMaster.GameOver();
+					}
 				}
 				attackInitialTime = Time.time;
 			}

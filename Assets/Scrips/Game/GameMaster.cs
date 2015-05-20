@@ -35,6 +35,7 @@ public class GameMaster : MonoBehaviour {
 
 	public static void GameOver(){
 		GameObject.FindGameObjectWithTag ("GameOver").GetComponent<GameOver> ().show ();
+		SoundManager.instance.PlayingSound ("Scream");
 		Debug.Log ("GameOver");
 		GameMaster.instance.isGameOver = true;
 	}
