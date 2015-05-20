@@ -32,6 +32,7 @@ public class ZombieHealth : MonoBehaviour {
 		HitBackward();
 		health -= damage;
 		if (health <= 0) {
+			SoundManager.instance.PlayingSound("zombieDieVoice");
 			GameMaster.KillEnemy(this);
 			GameAttribute.instance.Score += score;
 			GameData.setScore((int)GameAttribute.instance.Score);
