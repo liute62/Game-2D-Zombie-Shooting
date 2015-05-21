@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\Game\GameMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\Game\GameData.cs">
     <Files>
-      <File FileName="Assets\Scrips\Game\GameMaster.cs" Line="52" Column="89" />
-      <File FileName="Assets\Scrips\Game\GameData.cs" Line="59" Column="41" />
-      <File FileName="Assets\Scrips\Item\GetItem.cs" Line="78" Column="9" />
-      <File FileName="Assets\Scrips\Zombie\ZombieHealth.cs" Line="35" Column="12" />
+      <File FileName="Assets\Scrips\Game\GameMaster.cs" Line="25" Column="32" />
+      <File FileName="Assets\Scrips\Item\GetItem.cs" Line="81" Column="61" />
+      <File FileName="Assets\Scrips\Game\GameData.cs" Line="62" Column="28" />
+      <File FileName="Assets\Scrips\Zombie\ZombieHealth.cs" Line="1" Column="1" />
       <File FileName="Assets\Scrips\Zombie\ZombieController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Item\Bullet.cs" Line="67" Column="1" />
-      <File FileName="Assets\Scrips\GUI\GameOver.cs" Line="25" Column="29" />
+      <File FileName="Assets\Scrips\Item\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scrips\GUI\GameOver.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scrips\GUI\GUIController.cs" Line="16" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

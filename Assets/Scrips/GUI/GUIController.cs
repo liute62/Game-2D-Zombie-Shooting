@@ -11,4 +11,8 @@ public class GUIController : MonoBehaviour {
 	public void ShopBack(){
 		Application.LoadLevel ("StreetLevel");
 	}
+
+	public void BackMenu(){
+		Application.LoadLevel ("Scene_menu");
+	}
 }

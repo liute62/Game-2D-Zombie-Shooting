@@ -76,6 +76,7 @@ public class GetItem : MonoBehaviour {
 			}
 			break;
 		case -97:
+			Debug.Log(-97);
 			GameData.setNextLevel();
 			StartCoroutine("ChangeLevel",GameData.getCurrentLevelName());
 			break;

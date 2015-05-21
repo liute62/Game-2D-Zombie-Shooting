@@ -22,7 +22,7 @@ public class GameMaster : MonoBehaviour {
 	void Update () {
 		int level = GameData.getCurrentLevel ();
 		if (level == 3) {
-			if(level3_zombie_killed == 30){
+			if(level3_zombie_killed == 3){
 				level3_zombie_killed = 0;
 				level3_finished = true;
 			}

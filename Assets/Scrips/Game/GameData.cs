@@ -16,39 +16,39 @@ public class GameData : MonoBehaviour {
 	}
 
 	public static void resetZombie(){
-		setZombieInitialSpeedByIndex (0,5);
-		setZombieInitialAttackByIndex (0,10);
-		setZombieInitialAttackIntervelByIndex (0,1);
+		setZombieInitialSpeedByIndex (0,3);
+		setZombieInitialAttackByIndex (0,5);
+		setZombieInitialAttackIntervelByIndex (0,2);
 		setZombieInitialAttackRangeByIndex (0,1.5f);
 		setZombieInitialFindRangeByIndex (0,10);
-		setZombieInitialHealthByIndex (0,100);
+		setZombieInitialHealthByIndex (0,60);
 		setZombieInitialScoreByIndex (0, "100");
 		setZombieInitialGoldByIndex (0,"100");
 
-		setZombieInitialSpeedByIndex (1,6);
-		setZombieInitialAttackByIndex (1,15);
+		setZombieInitialSpeedByIndex (1,3);
+		setZombieInitialAttackByIndex (1,10);
 		setZombieInitialAttackIntervelByIndex (1,2);
 		setZombieInitialAttackRangeByIndex (1,2f);
 		setZombieInitialFindRangeByIndex (1,20);
-		setZombieInitialHealthByIndex (1,200);
+		setZombieInitialHealthByIndex (1,120);
 		setZombieInitialScoreByIndex (1, "300");
 		setZombieInitialGoldByIndex (1,"200");
 
-		setZombieInitialSpeedByIndex (2,6);
+		setZombieInitialSpeedByIndex (2,4);
 		setZombieInitialAttackByIndex (2,15);
 		setZombieInitialAttackIntervelByIndex (2,2);
 		setZombieInitialAttackRangeByIndex (2,2f);
 		setZombieInitialFindRangeByIndex (2,20);
-		setZombieInitialHealthByIndex (2,200);
+		setZombieInitialHealthByIndex (2,100);
 		setZombieInitialScoreByIndex (2, "300");
 		setZombieInitialGoldByIndex (2,"200");
 
-		setZombieInitialSpeedByIndex (3,3);
-		setZombieInitialAttackByIndex (3,25);
+		setZombieInitialSpeedByIndex (3,2);
+		setZombieInitialAttackByIndex (3,15);
 		setZombieInitialAttackIntervelByIndex (3,2);
 		setZombieInitialAttackRangeByIndex (3,2f);
 		setZombieInitialFindRangeByIndex (3,30);
-		setZombieInitialHealthByIndex (3,300);
+		setZombieInitialHealthByIndex (3,250);
 		setZombieInitialScoreByIndex (3, "400");
 		setZombieInitialGoldByIndex (3,"300");
 

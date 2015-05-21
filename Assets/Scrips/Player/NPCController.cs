@@ -36,6 +36,7 @@ public class NPCController : MonoBehaviour {
 					action = WalkAround();
 				    initialTime = Time.time;
 			}
+			if(Time.time > sayTime + 10){
 				SoundManager.instance.PlayingSound("HumanVoice");
 				sayTime = Time.time;
 			}
